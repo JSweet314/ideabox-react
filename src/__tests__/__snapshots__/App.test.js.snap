@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app should render an IdeaForm and a CardContainer 1`] = `
+<div
+  className="app"
+>
+  <IdeaForm
+    handleNewIdea={[Function]}
+  />
+  <CardContainer
+    removeIdea={[Function]}
+    searchIdeas={[Function]}
+    updateIdeaQuality={[Function]}
+    visibleIdeas={Array []}
+  />
+</div>
+`;
+
+exports[`app should render an IdeaForm and a CardContainer 2`] = `
+<App>
+  <div
+    className="app"
+  >
+    <IdeaForm
+      handleNewIdea={[Function]}
+    >
+      <form>
+        <h1>
+          <span>
+            idea
+          </span>
+          box
+        </h1>
+        <input
+          aria-label="idea title input"
+          className="titleInput"
+          onChange={[Function]}
+          placeholder="Idea Title"
+          type="text"
+          value=""
+        />
+        <input
+          aria-label="idea body input"
+          className="bodyInput"
+          onChange={[Function]}
+          placeholder="Idea Body"
+          type="text"
+          value=""
+        />
+        <button
+          disabled={true}
+          onClick={[Function]}
+          title="Save Idea"
+        >
+          save
+        </button>
+      </form>
+    </IdeaForm>
+    <CardContainer
+      removeIdea={[Function]}
+      searchIdeas={[Function]}
+      updateIdeaQuality={[Function]}
+      visibleIdeas={Array []}
+    >
+      <div
+        className="card-container"
+      >
+        <input
+          className="search"
+          onChange={[Function]}
+          placeholder="SEARCH"
+          type="search"
+        />
+      </div>
+    </CardContainer>
+  </div>
+</App>
+`;

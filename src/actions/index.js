@@ -5,6 +5,7 @@ export const handleNewIdea = (idea) => {
     'ideabox',
     JSON.stringify(ideas)
   );
+  
   return {
     ideas,
     visibleIdeas: ideas

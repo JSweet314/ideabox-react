@@ -44,8 +44,7 @@ class App extends Component {
     });
   }
 
-  removeIdea(e, id) {
-    e.preventDefault();
+  removeIdea(id) {
     const filteredIdeas = this.state.ideas.filter(idea => {
       return idea.id !== id;
     });
@@ -99,8 +98,9 @@ class App extends Component {
 
   searchIdeas(searchValue) {
     let results = this.state.ideas.filter(idea => {
-      return idea.title.includes(searchValue) 
-        || idea.body.includes(searchValue);
+      return (
+        idea.title.includes(searchValue) || idea.body.includes(searchValue)
+      );
     });
 
     this.setState({

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IdeaForm should render a form to obtain user input 1`] = `
+<form>
+  <h1>
+    <span>
+      idea
+    </span>
+    box
+  </h1>
+  <input
+    aria-label="idea title input"
+    className="titleInput"
+    onChange={[Function]}
+    placeholder="Idea Title"
+    type="text"
+    value=""
+  />
+  <input
+    aria-label="idea body input"
+    className="bodyInput"
+    onChange={[Function]}
+    placeholder="Idea Body"
+    type="text"
+    value=""
+  />
+  <button
+    disabled={true}
+    onClick={[Function]}
+    title="Save Idea"
+  >
+    save
+  </button>
+</form>
+`;

@@ -11,7 +11,7 @@ export const IdeaCard = (
       <button
         title="Delete Idea"
         className="deleteBtn"
-        onClick={e => removeIdea(e, id)}
+        onClick={e => removeIdea(id)}
       >
         <span 
           aria-label="delete button"
