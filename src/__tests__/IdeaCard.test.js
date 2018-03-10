@@ -13,7 +13,7 @@ describe('IdeaCard', () => {
       quality: 'plausible'
     };
 
-    ideaCard = shallow(
+    ideaCard = mount(
       <IdeaCard 
         {...idea}
         updateIdeaQuality={jest.fn()}
@@ -36,14 +36,6 @@ describe('IdeaCard', () => {
   });
 
   it('should call update quality if the upvote or down vote buttons are clicked', () => {
-    ideaCard = mount(
-      <IdeaCard
-        {...idea}
-        updateIdeaQuality={jest.fn()}
-        removeIdea={jest.fn()}
-      />
-    );
-
     const upVoteBtn = ideaCard.find('button.upVoteBtn');
     const downVoteBtn = ideaCard.find('button.downVoteBtn');
 
@@ -54,14 +46,6 @@ describe('IdeaCard', () => {
   });
 
   it('should call removeIdea when the delete button is clicked', () => {
-    ideaCard = mount(
-      <IdeaCard
-        {...idea}
-        updateIdeaQuality={jest.fn()}
-        removeIdea={jest.fn()}
-      />
-    );
-
     const deleteBtn = ideaCard.find('button.deleteBtn');
 
     deleteBtn.simulate('click');

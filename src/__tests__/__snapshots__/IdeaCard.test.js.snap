@@ -1,59 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`IdeaCard should render a card 1`] = `
-<article>
-  <h2>
-    Hello
-  </h2>
-  <button
-    className="deleteBtn"
-    onClick={[Function]}
-    title="Delete Idea"
-  >
-    <span
-      aria-label="delete button"
-      className="deleteBtn"
-      role="img"
-    >
-      ❌
-    </span>
-  </button>
-  <p>
-    World!
-  </p>
-  <p>
-    <b>
-      Quality:
-    </b>
-     
-    plausible
+<Component
+  body="World!"
+  id={1234}
+  quality="plausible"
+  removeIdea={[Function]}
+  title="Hello"
+  updateIdeaQuality={[Function]}
+>
+  <article>
+    <h2>
+      Hello
+    </h2>
     <button
-      className="downVoteBtn"
+      className="deleteBtn"
       onClick={[Function]}
-      title="Downvote Idea"
+      title="Delete Idea"
     >
       <span
-        aria-label="downvote button"
-        className="downVoteBtn"
+        aria-label="delete button"
+        className="deleteBtn"
         role="img"
       >
-        👎
+        ❌
       </span>
     </button>
-    <button
-      aria-label="upvote button"
-      className="upVoteBtn"
-      onClick={[Function]}
-      title="Upvote Idea"
-    >
-      <span
+    <p>
+      World!
+    </p>
+    <p>
+      <b>
+        Quality:
+      </b>
+       
+      plausible
+      <button
+        className="downVoteBtn"
+        onClick={[Function]}
+        title="Downvote Idea"
+      >
+        <span
+          aria-label="downvote button"
+          className="downVoteBtn"
+          role="img"
+        >
+          👎
+        </span>
+      </button>
+      <button
         aria-label="upvote button"
         className="upVoteBtn"
-        role="img"
+        onClick={[Function]}
+        title="Upvote Idea"
       >
-        👍
-      </span>
-    </button>
-  </p>
-</article>
+        <span
+          aria-label="upvote button"
+          className="upVoteBtn"
+          role="img"
+        >
+          👍
+        </span>
+      </button>
+    </p>
+  </article>
+</Component>
 `;
