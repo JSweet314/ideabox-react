@@ -27,8 +27,6 @@ describe('IdeaForm', () => {
   
   it('should render a form to obtain user input', () => {
     expect(ideaForm).toMatchSnapshot();
-
-    ideaForm = mount(<IdeaForm handleNewIdea={jest.fn()}/>);
   });
   
   it('should store the values of the title input and body input and whether the save button is disabled in its state', () => {

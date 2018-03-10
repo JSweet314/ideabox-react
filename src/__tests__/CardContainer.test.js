@@ -32,9 +32,9 @@ describe('CardContainer', () => {
     );
   });
 
-  it('should render without crashing', () => {
+  it('should render our good friend, CardContainer', () => {
     expect(cardContainer).toMatchSnapshot();
-
+    
     cardContainer = shallow(
       <CardContainer
         visibleIdeas={[]}
@@ -46,7 +46,6 @@ describe('CardContainer', () => {
 
     expect(cardContainer).toMatchSnapshot();
   });
-
 
   it('should have a prop visibleIdeas as well as methods from the app component', () => {
     expect(cardContainer.props('visibleIdeas')).toBeDefined();

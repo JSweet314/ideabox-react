@@ -6,6 +6,7 @@ describe('Idea', () => {
   beforeEach(() => {
     idea = new Idea();
   });
+  
   it('should instantiate our good friend, Idea', () => {
     expect(idea).toBeInstanceOf(Idea);
   });

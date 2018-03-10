@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CardContainer should render without crashing 1`] = `
+exports[`CardContainer should render our good friend, CardContainer 1`] = `
 <div
   className="card-container"
 >
@@ -31,7 +31,7 @@ exports[`CardContainer should render without crashing 1`] = `
 </div>
 `;
 
-exports[`CardContainer should render without crashing 2`] = `
+exports[`CardContainer should render our good friend, CardContainer 2`] = `
 <div
   className="card-container"
 >
