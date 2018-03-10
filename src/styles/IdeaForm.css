@@ -38,11 +38,11 @@ form button {
 form button {
   background-color: #00a79d;
   color: white;
-  cursor: pointer;
   width: 50%;
   border: none;
 }
 
-form button:hover {
+form button:enabled:hover {
+  cursor: pointer;
   background-color: #045e55;
 }
