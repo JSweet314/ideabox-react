@@ -1,5 +1,5 @@
 import React from 'react';
-import './IdeaCard.css';
+import './styles/IdeaCard.css';
 import PropTypes from 'prop-types';
 
 export const IdeaCard = (

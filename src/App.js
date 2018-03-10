@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../App.css';
-import IdeaForm from '../containers/IdeaForm';
-import CardContainer from '../containers/CardContainer';
+import './styles/App.css';
+import IdeaForm from './IdeaForm';
+import CardContainer from './CardContainer';
 
 class App extends Component {
   constructor() {

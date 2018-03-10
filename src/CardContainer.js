@@ -1,7 +1,7 @@
 import React from 'react';
-import {IdeaCard} from '../IdeaCard.js';
+import {IdeaCard} from './IdeaCard.js';
 import PropTypes from 'prop-types';
-import '../CardContainer.css';
+import './styles/CardContainer.css';
 
 const CardContainer = (
   { visibleIdeas, updateIdeaQuality, removeIdea, searchIdeas }
