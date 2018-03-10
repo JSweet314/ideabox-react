@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Idea from './Idea.js';
-import './styles/IdeaForm.css';
+import '../styles/IdeaForm.css';
 import PropTypes from 'prop-types';
 
 class IdeaForm extends Component {
