@@ -1,4 +1,4 @@
-import Idea from '../Idea.js';
+import Idea from '../scripts/Idea.js';
 
 describe('Idea', () => {
   let idea;

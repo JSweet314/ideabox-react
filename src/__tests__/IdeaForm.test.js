@@ -1,6 +1,6 @@
 import React from 'react';
-import IdeaForm from '../containers/IdeaForm.js';
 import { shallow, mount } from 'enzyme';
+import IdeaForm from '../scripts/IdeaForm.js';
 
 describe('IdeaForm', () => {
   let ideaForm, event1, event2, event3;

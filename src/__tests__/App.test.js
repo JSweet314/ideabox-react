@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../components/App.js';
 import {shallow, mount} from 'enzyme';
+import App from '../scripts/App.js';
 
 describe('app', () => {
   let app, event, idea1, idea2;

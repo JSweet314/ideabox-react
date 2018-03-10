@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
-import {IdeaCard} from '../IdeaCard.js';
+import IdeaCard from '../scripts/IdeaCard.js';
 
 describe('IdeaCard', () => {
   let ideaCard, idea;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {IdeaCard} from './IdeaCard.js';
+import IdeaCard from './IdeaCard.js';
 import PropTypes from 'prop-types';
 import '../styles/CardContainer.css';
 
@@ -16,10 +16,11 @@ const CardContainer = (
       />
       {
         visibleIdeas.map((idea, index) =>
-          <IdeaCard {...idea}
+          <IdeaCard 
             key={index}
             updateIdeaQuality={updateIdeaQuality}
             removeIdea={removeIdea}
+            {...idea}
           />
         )
       }

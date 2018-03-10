@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import IdeaForm from './IdeaForm.js';
+import CardContainer from './CardContainer.js';
 import '../styles/App.css';
-import IdeaForm from './IdeaForm';
-import CardContainer from './CardContainer';
 
 class App extends Component {
   constructor() {
@@ -10,7 +10,6 @@ class App extends Component {
       ideas: [],
       visibleIdeas: []
     };
-
     this.handleNewIdea = this.handleNewIdea.bind(this);
     this.updateIdeaQuality = this.updateIdeaQuality.bind(this);
     this.removeIdea = this.removeIdea.bind(this);
@@ -25,23 +24,14 @@ class App extends Component {
       ideas = JSON.parse(previousBox);
     }
     
-    this.setState({
-      ideas,
-      visibleIdeas: ideas
-    });
+    this.setState({ideas, visibleIdeas: ideas});
   }
 
   handleNewIdea(idea) {
     const ideas = [idea, ...this.state.ideas];
 
-    localStorage.setItem(
-      'ideabox',
-      JSON.stringify(ideas)
-    );
-    this.setState({
-      ideas,
-      visibleIdeas: ideas
-    });
+    localStorage.setItem('ideabox', JSON.stringify(ideas));
+    this.setState({ideas, visibleIdeas: ideas});
   }
 
   removeIdea(id) {
@@ -51,34 +41,23 @@ class App extends Component {
 
     localStorage.setItem('ideabox', JSON.stringify(filteredIdeas));
 
-    this.setState({
-      ideas: filteredIdeas,
-      visibleIdeas: filteredIdeas
-    });
+    this.setState({ideas: filteredIdeas, visibleIdeas: filteredIdeas});
   }
 
   updateIdeaQuality(event, id) {
-    const {idea, index} = this.state.ideas.reduce((obj, idea, index) => {
+    const {idea, index} = this.state.ideas.reduce((data, idea, index) => {
       if (idea.id === id) {
-        obj = {idea, index};
+        data = {idea, index};
       }
-      return obj;
+      return data;
     }, {});
   
     switch (event.target.className) {
     case 'upVoteBtn':
-      if (idea.quality === 'swill') {
-        idea.quality = 'plausible';
-      } else {
-        idea.quality = 'genius';
-      }
+      idea.quality = idea.quality === 'swill' ? 'plausible' : 'genius';
       break;        
     default:
-      if (idea.quality === 'genius') {
-        idea.quality = 'plausible';
-      } else {
-        idea.quality = 'swill';
-      }
+      idea.quality = idea.quality === 'genius' ? 'plausible' : 'swill';
       break;
     }
     
@@ -90,30 +69,23 @@ class App extends Component {
 
     localStorage.setItem('ideabox', JSON.stringify(ideas));
 
-    this.setState({
-      ideas,
-      visibleIdeas: [...this.state.visibleIdeas]
-    });
+    this.setState({ideas});
   }
 
   searchIdeas(searchValue) {
-    let results = this.state.ideas.filter(idea => {
+    let visibleIdeas = this.state.ideas.filter(idea => {
       return (
         idea.title.includes(searchValue) || idea.body.includes(searchValue)
       );
     });
 
-    this.setState({
-      visibleIdeas: results
-    });
+    this.setState({visibleIdeas});
   }
 
   render() {
     return (
       <div className="app">
-        <IdeaForm 
-          handleNewIdea={this.handleNewIdea} 
-        />
+        <IdeaForm handleNewIdea={this.handleNewIdea} />
         <CardContainer 
           visibleIdeas={this.state.visibleIdeas}
           updateIdeaQuality={this.updateIdeaQuality}

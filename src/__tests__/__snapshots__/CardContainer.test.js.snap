@@ -10,7 +10,7 @@ exports[`CardContainer should render without crashing 1`] = `
     placeholder="SEARCH"
     type="search"
   />
-  <Component
+  <IdeaCard
     body="World!"
     id={1234}
     key="0"
@@ -19,7 +19,7 @@ exports[`CardContainer should render without crashing 1`] = `
     title="Hello"
     updateIdeaQuality={[Function]}
   />
-  <Component
+  <IdeaCard
     body="Woo Hoo"
     id={4321}
     key="1"

@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
-import CardContainer from '../containers/CardContainer';
+import CardContainer from '../scripts/CardContainer.js';
 
 describe('CardContainer', () => {
   let cardContainer, idea1, idea2, visibleIdeas;

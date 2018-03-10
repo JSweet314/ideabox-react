@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`IdeaCard should render a card 1`] = `
-<Component
+<IdeaCard
   body="World!"
   id={1234}
   quality="plausible"
@@ -64,5 +64,5 @@ exports[`IdeaCard should render a card 1`] = `
       </button>
     </p>
   </article>
-</Component>
+</IdeaCard>
 `;

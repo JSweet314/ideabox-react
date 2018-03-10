@@ -1,23 +1,18 @@
 import React from 'react';
-import '../styles/IdeaCard.css';
 import PropTypes from 'prop-types';
+import '../styles/IdeaCard.css';
 
-export const IdeaCard = (
+const IdeaCard = (
   {title, body, id, quality, updateIdeaQuality, removeIdea}
 ) => {
   return (
     <article>
       <h2>{title}</h2>
-      <button
+      <button 
         title="Delete Idea"
         className="deleteBtn"
-        onClick={e => removeIdea(id)}
-      >
-        <span 
-          aria-label="delete button"
-          role="img" 
-          className="deleteBtn"
-        >
+        onClick={() => removeIdea(id)}>
+        <span aria-label="delete button" role="img" className="deleteBtn">
           ❌
         </span>
       </button>
@@ -26,14 +21,8 @@ export const IdeaCard = (
         <button
           title="Downvote Idea"
           className="downVoteBtn"
-          onClick={e => updateIdeaQuality(e, id)}
-          
-        >
-          <span 
-            aria-label="downvote button" 
-            role="img" 
-            className="downVoteBtn"
-          >
+          onClick={e => updateIdeaQuality(e, id)}>
+          <span aria-label="downvote button" role="img" className="downVoteBtn">
             👎
           </span>
         </button>
@@ -41,18 +30,12 @@ export const IdeaCard = (
           title="Upvote Idea"
           className="upVoteBtn"
           onClick={e => updateIdeaQuality(e, id)}
-          aria-label="upvote button"
-        >
-          <span 
-            aria-label="upvote button" 
-            role="img" 
-            className="upVoteBtn"
-          >
+          aria-label="upvote button">
+          <span aria-label="upvote button" role="img" className="upVoteBtn">
             👍
           </span>
         </button>
       </p>
-      
     </article>
   );
 };
@@ -65,3 +48,5 @@ IdeaCard.propTypes = {
   updateIdeaQuality: PropTypes.func.isRequired,
   removeIdea: PropTypes.func.isRequired
 };
+
+export default IdeaCard;

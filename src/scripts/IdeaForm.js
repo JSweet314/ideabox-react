@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import Idea from './Idea.js';
-import '../styles/IdeaForm.css';
 import PropTypes from 'prop-types';
+import '../styles/IdeaForm.css';
 
 class IdeaForm extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       titleInput: '',
       bodyInput: '',
