@@ -4,6 +4,8 @@ This app serves as practice for building applications with react and writing tes
 
 To start, clone down this repo and run `npm install` then `npm start`.
 
+For a production build, run `npm run build`.
+
 To run the test suite, run `npm test`.
 
 To lint the scripts folder, run `npm run eslint`.
