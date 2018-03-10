@@ -128,12 +128,24 @@ describe('app', () => {
     expect(app.state('visibleIdeas')).toEqual([idea2, idea1]); 
   });
 
+  it('should be able to display ideas by quality', () => {
+    app.instance().handleNewIdea(idea1);
+    app.instance().handleNewIdea(idea2);
+    app.instance().filterByQuality('genius');
+
+    expect(app.state('visibleIdeas')).toEqual([idea2]);
+
+    app.instance().filterByQuality('plausible');
+
+    expect(app.state('visibleIdeas')).toEqual([idea1]);
+  });
+
   it('should retrieve ideas from localStorage if available', () => {
     expect(app.state('ideas')).toEqual([]);
     
     localStorage.setItem('ideabox', JSON.stringify([idea2, idea1]));
     app = shallow(<App />);
 
-    expect(app.state('ideas')).toEqual([idea2, idea1])
+    expect(app.state('ideas')).toEqual([idea2, idea1]);
   });
 });

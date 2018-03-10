@@ -1,0 +1,12 @@
+.quality-filter {
+  font-size: 2rem;
+  vertical-align: center;
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin: 0.5rem 0 0 0;
+}
+
+.quality-filter__select {
+  font-size: 1.5rem;
+}

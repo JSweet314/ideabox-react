@@ -10,6 +10,9 @@ exports[`CardContainer should render our good friend, CardContainer 1`] = `
     placeholder="SEARCH"
     type="search"
   />
+  <QualityFilter
+    filterByQuality={[Function]}
+  />
   <IdeaCard
     body="World!"
     id={1234}
@@ -40,6 +43,9 @@ exports[`CardContainer should render our good friend, CardContainer 2`] = `
     onChange={[Function]}
     placeholder="SEARCH"
     type="search"
+  />
+  <QualityFilter
+    filterByQuality={[Function]}
   />
 </div>
 `;

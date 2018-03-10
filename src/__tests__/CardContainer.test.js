@@ -28,6 +28,7 @@ describe('CardContainer', () => {
         updateIdeaQuality={jest.fn()}
         removeIdea={jest.fn()}
         searchIdeas={jest.fn()}
+        filterByQuality={jest.fn()}
       />
     );
   });
@@ -41,6 +42,7 @@ describe('CardContainer', () => {
         updateIdeaQuality={jest.fn()}
         removeIdea={jest.fn()}
         searchIdeas={jest.fn()}
+        filterByQuality={jest.fn()}
       />
     );
 

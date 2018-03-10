@@ -8,12 +8,14 @@ class App extends Component {
     super();
     this.state = {
       ideas: [],
-      visibleIdeas: []
+      visibleIdeas: [],
+      qualityFilter: 'all'
     };
     this.handleNewIdea = this.handleNewIdea.bind(this);
     this.updateIdeaQuality = this.updateIdeaQuality.bind(this);
     this.removeIdea = this.removeIdea.bind(this);
     this.searchIdeas = this.searchIdeas.bind(this);
+    this.filterByQuality = this.filterByQuality.bind(this);
   }
 
   componentDidMount() {
@@ -78,8 +80,22 @@ class App extends Component {
         idea.title.includes(searchValue) || idea.body.includes(searchValue)
       );
     });
-
+    
     this.setState({visibleIdeas});
+  }
+
+  filterByQuality(qualityFilter) {
+    let visibleIdeas;
+
+    if (qualityFilter === 'all') {
+      visibleIdeas = this.state.ideas;
+    } else {
+      visibleIdeas = this.state.ideas.filter(idea => {
+        return idea.quality === qualityFilter;
+      });
+    }
+
+    this.setState({visibleIdeas, qualityFilter});
   }
 
   render() {
@@ -91,6 +107,7 @@ class App extends Component {
           updateIdeaQuality={this.updateIdeaQuality}
           removeIdea={this.removeIdea}
           searchIdeas={this.searchIdeas}
+          filterByQuality={this.filterByQuality}
         />
       </div>
     );
