@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardContainer should render without crashing 1`] = `
+<div
+  className="card-container"
+>
+  <input
+    className="search"
+    onChange={[Function]}
+    placeholder="SEARCH"
+    type="search"
+  />
+  <Component
+    body="World!"
+    id={1234}
+    key="0"
+    quality="plausible"
+    removeIdea={[Function]}
+    title="Hello"
+    updateIdeaQuality={[Function]}
+  />
+  <Component
+    body="Woo Hoo"
+    id={4321}
+    key="1"
+    quality="genius"
+    removeIdea={[Function]}
+    title="New App!"
+    updateIdeaQuality={[Function]}
+  />
+</div>
+`;
+
+exports[`CardContainer should render without crashing 2`] = `
+<div
+  className="card-container"
+>
+  <input
+    className="search"
+    onChange={[Function]}
+    placeholder="SEARCH"
+    type="search"
+  />
+</div>
+`;
