@@ -9,4 +9,5 @@
 .quality-filter__select {
   font-size: 1.5rem;
   margin: 0 0 0 0.5rem;
+  cursor: pointer;
 }
