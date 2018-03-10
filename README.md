@@ -10,4 +10,4 @@ To lint the scripts folder, run `npm run eslint`.
 
 ![final product](./src/ideabox-react-screenshot.png) 
 
-For practice, erase the files in the __tests__/ and scripts/ folders and build your own ideabox!
+For practice, erase the files in the `__tests__/` and `scripts/` folders and build your own ideabox!
