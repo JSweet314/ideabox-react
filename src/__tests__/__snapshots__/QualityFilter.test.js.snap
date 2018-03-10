@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QualityFilter should render our good friend, QualityFilter 1`] = `
+<label
+  className="quality-filter"
+  htmlFor=""
+>
+  <span>
+    Filter Ideas By Quality: 
+  </span>
+  <select
+    className="quality-filter__select"
+    name="quality"
+    onChange={[Function]}
+  >
+    <option
+      value="all"
+    >
+      all
+    </option>
+    <option
+      value="swill"
+    >
+      swill
+    </option>
+    <option
+      value="plausible"
+    >
+      plausible
+    </option>
+    <option
+      value="genius"
+    >
+      genius
+    </option>
+  </select>
+</label>
+`;

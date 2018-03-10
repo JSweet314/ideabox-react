@@ -8,6 +8,7 @@ exports[`app should render an IdeaForm and a CardContainer 1`] = `
     handleNewIdea={[Function]}
   />
   <CardContainer
+    filterByQuality={[Function]}
     removeIdea={[Function]}
     searchIdeas={[Function]}
     updateIdeaQuality={[Function]}
@@ -57,6 +58,7 @@ exports[`app should render an IdeaForm and a CardContainer 2`] = `
       </form>
     </IdeaForm>
     <CardContainer
+      filterByQuality={[Function]}
       removeIdea={[Function]}
       searchIdeas={[Function]}
       updateIdeaQuality={[Function]}
@@ -71,6 +73,44 @@ exports[`app should render an IdeaForm and a CardContainer 2`] = `
           placeholder="SEARCH"
           type="search"
         />
+        <QualityFilter
+          filterByQuality={[Function]}
+        >
+          <label
+            className="quality-filter"
+            htmlFor=""
+          >
+            <span>
+              Filter Ideas By Quality: 
+            </span>
+            <select
+              className="quality-filter__select"
+              name="quality"
+              onChange={[Function]}
+            >
+              <option
+                value="all"
+              >
+                all
+              </option>
+              <option
+                value="swill"
+              >
+                swill
+              </option>
+              <option
+                value="plausible"
+              >
+                plausible
+              </option>
+              <option
+                value="genius"
+              >
+                genius
+              </option>
+            </select>
+          </label>
+        </QualityFilter>
       </div>
     </CardContainer>
   </div>
