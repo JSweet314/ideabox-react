@@ -13,7 +13,7 @@ form {
 h1 {
   color: #6d6e71;
   font-family: 'Roboto Slab', serif;
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 h1 span {
@@ -29,9 +29,9 @@ form input,
 form button {
   width: 50%;
   margin: 0 0 1rem 0;
-  height: 2rem;
+  height: 4rem;
   border: 2px solid lightgray;
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-family: 'Open Sans', sans-serif;
 }
 

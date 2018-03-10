@@ -1,8 +1,7 @@
 article {
   border-bottom: 1px solid lightgray;
-  margin: 1rem 0 0 0;
+  margin: 2rem 0 0 0;
   width: 50%;
-  padding-bottom: 0.5rem;
 }
 
 article h2 {
@@ -11,24 +10,33 @@ article h2 {
   font-family: 'Roboto Slab', serif;
   width: 80%;
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 3rem;
 }
 
 article p {
   color: #939598;
   width: 100%;
+  font-size: 2rem;
 }
 
 .deleteBtn,
 .upVoteBtn,
 .downVoteBtn {
-  float: right;
   border: none;
-  margin-left: 0.5rem;
-  width: 2rem;
-  height: 2rem;
-  font-size: 1.5rem;
   cursor: pointer;
   outline: none;
   padding: 0;
+}
+
+.deleteBtn {
+  font-size: 3rem;
+  float: right;
+  width: 3rem;
+  height: 3rem;
+}
+
+button.upVoteBtn,
+button.downVoteBtn {
+  font-size: 2rem;
+  margin: 0 1rem 0 0;
 }

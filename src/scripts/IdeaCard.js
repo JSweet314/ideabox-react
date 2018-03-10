@@ -17,15 +17,7 @@ const IdeaCard = (
         </span>
       </button>
       <p>{body}</p>
-      <p><b>Quality:</b> {quality}
-        <button
-          title="Downvote Idea"
-          className="downVoteBtn"
-          onClick={e => updateIdeaQuality(e, id)}>
-          <span aria-label="downvote button" role="img" className="downVoteBtn">
-            👎
-          </span>
-        </button>
+      <p>
         <button
           title="Upvote Idea"
           className="upVoteBtn"
@@ -35,6 +27,15 @@ const IdeaCard = (
             👍
           </span>
         </button>
+        <button
+          title="Downvote Idea"
+          className="downVoteBtn"
+          onClick={e => updateIdeaQuality(e, id)}>
+          <span aria-label="downvote button" role="img" className="downVoteBtn">
+            👎
+          </span>
+        </button>
+        <b>Quality:</b> {quality}
       </p>
     </article>
   );
