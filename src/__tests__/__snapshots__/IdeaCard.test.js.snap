@@ -30,24 +30,6 @@ exports[`IdeaCard should render a card 1`] = `
       World!
     </p>
     <p>
-      <b>
-        Quality:
-      </b>
-       
-      plausible
-      <button
-        className="downVoteBtn"
-        onClick={[Function]}
-        title="Downvote Idea"
-      >
-        <span
-          aria-label="downvote button"
-          className="downVoteBtn"
-          role="img"
-        >
-          👎
-        </span>
-      </button>
       <button
         aria-label="upvote button"
         className="upVoteBtn"
@@ -62,6 +44,24 @@ exports[`IdeaCard should render a card 1`] = `
           👍
         </span>
       </button>
+      <button
+        className="downVoteBtn"
+        onClick={[Function]}
+        title="Downvote Idea"
+      >
+        <span
+          aria-label="downvote button"
+          className="downVoteBtn"
+          role="img"
+        >
+          👎
+        </span>
+      </button>
+      <b>
+        Quality:
+      </b>
+       
+      plausible
     </p>
   </article>
 </IdeaCard>
