@@ -8,8 +8,7 @@ class App extends Component {
     super();
     this.state = {
       ideas: [],
-      visibleIdeas: [],
-      qualityFilter: 'all'
+      visibleIdeas: []
     };
     this.handleNewIdea = this.handleNewIdea.bind(this);
     this.updateIdeaQuality = this.updateIdeaQuality.bind(this);
