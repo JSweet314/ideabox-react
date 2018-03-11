@@ -4,7 +4,10 @@ import QualityFilter from '../components/QualityFilter.js';
 
 describe('QualityFilter', () => {
   it('should render our good friend, QualityFilter', () => {
-    const qualityFilter = shallow(<QualityFilter filterByQuality={jest.fn()} />);
+    const qualityFilter = shallow(
+      <QualityFilter filterByQuality={jest.fn()} />
+    );
+
     expect(qualityFilter).toMatchSnapshot();
   });
 

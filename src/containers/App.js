@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import IdeaForm from './IdeaForm.js';
-import CardContainer from '../components/CardContainer.js';
+import IdeaCards from '../components/IdeaCards.js';
 import '../styles/App.css';
 
 class App extends Component {
@@ -8,8 +8,7 @@ class App extends Component {
     super();
     this.state = {
       ideas: [],
-      visibleIdeas: [],
-      qualityFilter: 'all'
+      visibleIdeas: []
     };
     this.handleNewIdea = this.handleNewIdea.bind(this);
     this.updateIdeaQuality = this.updateIdeaQuality.bind(this);
@@ -102,7 +101,7 @@ class App extends Component {
     return (
       <div className="app">
         <IdeaForm handleNewIdea={this.handleNewIdea} />
-        <CardContainer 
+        <IdeaCards 
           visibleIdeas={this.state.visibleIdeas}
           updateIdeaQuality={this.updateIdeaQuality}
           removeIdea={this.removeIdea}

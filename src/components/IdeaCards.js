@@ -2,9 +2,9 @@ import React from 'react';
 import IdeaCard from './IdeaCard.js';
 import QualityFilter from './QualityFilter.js';
 import PropTypes from 'prop-types';
-import '../styles/CardContainer.css';
+import '../styles/IdeaCards.css';
 
-const CardContainer = (
+const IdeaCards = (
   { visibleIdeas, updateIdeaQuality, removeIdea, searchIdeas, filterByQuality }
 ) => {
   return (
@@ -30,11 +30,11 @@ const CardContainer = (
   );
 };
 
-CardContainer.defaultProps = {
+IdeaCards.defaultProps = {
   visibleIdeas: []
 };
 
-CardContainer.propTypes = {
+IdeaCards.propTypes = {
   visibleIdeas: PropTypes.arrayOf(PropTypes.object),
   removeIdea: PropTypes.func.isRequired,
   updateIdeaQuality: PropTypes.func.isRequired,
@@ -42,4 +42,4 @@ CardContainer.propTypes = {
   filterByQuality: PropTypes.func.isRequired
 };
 
-export default CardContainer;
+export default IdeaCards;

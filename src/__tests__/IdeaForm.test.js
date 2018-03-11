@@ -32,7 +32,9 @@ describe('IdeaForm', () => {
   it('should store the values of the title input and body input and whether the save button is disabled in its state', () => {
     expect(ideaForm.state()).toEqual({
       titleInput: '',
+      titleChars: 120,
       bodyInput: '',
+      bodyChars: 120,
       saveDisabled: true
     });
   });
@@ -60,6 +62,17 @@ describe('IdeaForm', () => {
 
     expect(ideaForm.state('titleInput')).toEqual('Woo Hoo!');
     expect(ideaForm.state('bodyInput')).toEqual('Hello World!');
+  });
+
+  it('should keep track of the remaining characters for title and body', () => {
+    expect(ideaForm.state('titleChars')).toEqual(120);
+    expect(ideaForm.state('bodyChars')).toEqual(120);
+
+    ideaForm.instance().updateTitleInput(event1);
+    ideaForm.instance().updateBodyInput(event2);
+
+    expect(ideaForm.state('titleChars')).toEqual(112);
+    expect(ideaForm.state('bodyChars')).toEqual(108);
   });
 
   it('should enable to save button when both the title and body input fields are completed', () => {
@@ -103,7 +116,9 @@ describe('IdeaForm', () => {
     expect(ideaForm.props().handleNewIdea).toHaveBeenCalledTimes(1);
     expect(ideaForm.state()).toEqual({
       titleInput: '',
+      titleChars: 120,
       bodyInput: '',
+      bodyChars: 120,
       saveDisabled: true
     });
   });

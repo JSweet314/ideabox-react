@@ -1,9 +1,9 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
-import CardContainer from '../components/CardContainer.js';
+import {shallow} from 'enzyme';
+import IdeaCards from '../components/IdeaCards.js';
 
-describe('CardContainer', () => {
-  let cardContainer, idea1, idea2, visibleIdeas;
+describe('IdeaCards', () => {
+  let ideaCards, idea1, idea2, visibleIdeas;
 
   beforeEach(() => {
     idea1 = {
@@ -22,8 +22,8 @@ describe('CardContainer', () => {
 
     visibleIdeas = [idea1, idea2];
     
-    cardContainer = shallow(
-      <CardContainer
+    ideaCards = shallow(
+      <IdeaCards
         visibleIdeas={visibleIdeas}
         updateIdeaQuality={jest.fn()}
         removeIdea={jest.fn()}
@@ -33,11 +33,11 @@ describe('CardContainer', () => {
     );
   });
 
-  it('should render our good friend, CardContainer', () => {
-    expect(cardContainer).toMatchSnapshot();
+  it('should render our good friend, IdeaCards', () => {
+    expect(ideaCards).toMatchSnapshot();
     
-    cardContainer = shallow(
-      <CardContainer
+    ideaCards = shallow(
+      <IdeaCards
         visibleIdeas={[]}
         updateIdeaQuality={jest.fn()}
         removeIdea={jest.fn()}
@@ -46,13 +46,13 @@ describe('CardContainer', () => {
       />
     );
 
-    expect(cardContainer).toMatchSnapshot();
+    expect(ideaCards).toMatchSnapshot();
   });
 
   it('should have a prop visibleIdeas as well as methods from the app component', () => {
-    expect(cardContainer.props('visibleIdeas')).toBeDefined();
-    expect(cardContainer.props('updateIdeaQuality')).toBeDefined();
-    expect(cardContainer.props('removeIdea')).toBeDefined();
-    expect(cardContainer.props('searchIdeas')).toBeDefined();
+    expect(ideaCards.props('visibleIdeas')).toBeDefined();
+    expect(ideaCards.props('updateIdeaQuality')).toBeDefined();
+    expect(ideaCards.props('removeIdea')).toBeDefined();
+    expect(ideaCards.props('searchIdeas')).toBeDefined();
   });
 });

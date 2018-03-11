@@ -43,6 +43,8 @@ class IdeaForm extends Component {
     this.setState({
       titleInput: '',
       bodyInput: '',
+      titleChars: 120,
+      bodyChars: 120,
       saveDisabled: true
     });
   }

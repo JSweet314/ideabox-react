@@ -82,7 +82,7 @@ describe('app', () => {
 
     expect(app.state('ideas')).toEqual([idea2, idea1]);
     expect(JSON.parse(localStorage.getItem('ideabox')).length).toEqual(2);
-  })
+  });
 
   it('should be able to remove an idea from its array', () => {
     app.instance().handleNewIdea(idea1);
