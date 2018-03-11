@@ -11,19 +11,29 @@ exports[`IdeaForm should render a form to obtain user input 1`] = `
   <input
     aria-label="idea title input"
     className="titleInput"
+    maxLength="120"
     onChange={[Function]}
     placeholder="Idea Title"
     type="text"
     value=""
   />
+  <p>
+    Characters remaining: 
+    120
+  </p>
   <input
     aria-label="idea body input"
     className="bodyInput"
+    maxLength="120"
     onChange={[Function]}
     placeholder="Idea Body"
     type="text"
     value=""
   />
+  <p>
+    Characters remaining: 
+    120
+  </p>
   <button
     disabled={true}
     onClick={[Function]}
