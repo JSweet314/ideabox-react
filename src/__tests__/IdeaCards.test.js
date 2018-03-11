@@ -35,7 +35,9 @@ describe('IdeaCards', () => {
 
   it('should render our good friend, IdeaCards', () => {
     expect(ideaCards).toMatchSnapshot();
-    
+  });
+
+  it('should render just the Quality Filter and search input if there are no cards to display', () => {
     ideaCards = shallow(
       <IdeaCards
         visibleIdeas={[]}

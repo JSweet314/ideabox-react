@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`IdeaCards should render just the Quality Filter and search input if there are no cards to display 1`] = `
+<div
+  className="card-container"
+>
+  <input
+    className="search"
+    onChange={[Function]}
+    placeholder="SEARCH"
+    type="search"
+  />
+  <QualityFilter
+    filterByQuality={[Function]}
+  />
+</div>
+`;
+
 exports[`IdeaCards should render our good friend, IdeaCards 1`] = `
 <div
   className="card-container"
@@ -30,22 +46,6 @@ exports[`IdeaCards should render our good friend, IdeaCards 1`] = `
     removeIdea={[Function]}
     title="New App!"
     updateIdeaQuality={[Function]}
-  />
-</div>
-`;
-
-exports[`IdeaCards should render our good friend, IdeaCards 2`] = `
-<div
-  className="card-container"
->
-  <input
-    className="search"
-    onChange={[Function]}
-    placeholder="SEARCH"
-    type="search"
-  />
-  <QualityFilter
-    filterByQuality={[Function]}
   />
 </div>
 `;

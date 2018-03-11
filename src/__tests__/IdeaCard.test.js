@@ -39,8 +39,14 @@ describe('IdeaCard', () => {
     const upVoteBtn = ideaCard.find('button.upVoteBtn');
     const downVoteBtn = ideaCard.find('button.downVoteBtn');
 
-    upVoteBtn.simulate('click');
-    upVoteBtn.simulate('click');
+    upVoteBtn.simulate(
+      'click',
+      ({target: {className: 'upVoteBtn'}}, ideaCard.id)
+    );
+    upVoteBtn.simulate(
+      'click',
+      ({ target: { className: 'downVoteBtn' } }, ideaCard.id)
+    );
     
     expect(ideaCard.props().updateIdeaQuality).toHaveBeenCalledTimes(2);
   });
