@@ -116,9 +116,9 @@ describe('IdeaForm', () => {
     expect(ideaForm.props().handleNewIdea).toHaveBeenCalledTimes(1);
     expect(ideaForm.state()).toEqual({
       titleInput: '',
-      titleChars: 112,
+      titleChars: 120,
       bodyInput: '',
-      bodyChars: 108,
+      bodyChars: 120,
       saveDisabled: true
     });
   });
