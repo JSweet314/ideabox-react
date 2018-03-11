@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import IdeaForm from './IdeaForm.js';
-import CardContainer from './CardContainer.js';
+import CardContainer from '../components/CardContainer.js';
 import '../styles/App.css';
 
 class App extends Component {

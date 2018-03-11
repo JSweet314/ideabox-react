@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
-import QualityFilter from '../scripts/QualityFilter.js';
+import QualityFilter from '../components/QualityFilter.js';
 
 describe('QualityFilter', () => {
   it('should render our good friend, QualityFilter', () => {

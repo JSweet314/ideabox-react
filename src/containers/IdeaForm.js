@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Idea from './Idea.js';
 import PropTypes from 'prop-types';
+import Idea from '../scripts/Idea.js';
 import '../styles/IdeaForm.css';
 
 class IdeaForm extends Component {
@@ -9,7 +9,9 @@ class IdeaForm extends Component {
     this.state = {
       titleInput: '',
       bodyInput: '',
-      saveDisabled: true
+      saveDisabled: true,
+      titleChars: 120,
+      bodyChars: 120
     };
   }
 
@@ -18,7 +20,8 @@ class IdeaForm extends Component {
 
     this.setState({
       titleInput: e.target.value,
-      saveDisabled: !waitingForUserInput
+      saveDisabled: !waitingForUserInput,
+      titleChars: 120 - e.target.value.length
     });
   }
 
@@ -27,7 +30,8 @@ class IdeaForm extends Component {
 
     this.setState({
       bodyInput: e.target.value,
-      saveDisabled: !waitingForUserInput
+      saveDisabled: !waitingForUserInput,
+      bodyChars: 120 - e.target.value.length
     });
   }
 
@@ -52,17 +56,21 @@ class IdeaForm extends Component {
           className="titleInput"
           type="text"
           placeholder="Idea Title"
+          maxLength="120"
           value={this.state.titleInput}
           onChange={(e) => this.updateTitleInput(e)}
         />
+        <p>Characters remaining: {this.state.titleChars}</p>
         <input 
           aria-label="idea body input"
           className="bodyInput"
           type="text"
           placeholder="Idea Body"
+          maxLength="120"
           value={this.state.bodyInput}
           onChange={(e) => this.updateBodyInput(e)}
         />
+        <p>Characters remaining: {this.state.bodyChars}</p>
         <button 
           title="Save Idea"
           onClick={(e) => this.createIdea(e)}

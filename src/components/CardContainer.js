@@ -19,10 +19,10 @@ const CardContainer = (
       {
         visibleIdeas.map((idea, index) =>
           <IdeaCard 
+            {...idea}
             key={index}
             updateIdeaQuality={updateIdeaQuality}
             removeIdea={removeIdea}
-            {...idea}
           />
         )
       }
@@ -30,8 +30,12 @@ const CardContainer = (
   );
 };
 
+CardContainer.defaultProps = {
+  visibleIdeas: []
+};
+
 CardContainer.propTypes = {
-  visibleIdeas: PropTypes.arrayOf(PropTypes.object).isRequired,
+  visibleIdeas: PropTypes.arrayOf(PropTypes.object),
   removeIdea: PropTypes.func.isRequired,
   updateIdeaQuality: PropTypes.func.isRequired,
   searchIdeas: PropTypes.func.isRequired,
