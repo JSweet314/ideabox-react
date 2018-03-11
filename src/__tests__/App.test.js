@@ -40,11 +40,12 @@ describe('app', () => {
 
   it('should render an IdeaForm and a CardContainer', () => {
     expect(app).toMatchSnapshot();
-
-    app = mount(<App />);
-
-    expect(app).toMatchSnapshot();
   });  
+
+  it('should render the whole application', () => {
+    app = mount(<App />);
+    expect(app).toMatchSnapshot();
+  });
 
   it('should hold an array of ideas in state', () => {
     expect(app.state('ideas')).toEqual([]);

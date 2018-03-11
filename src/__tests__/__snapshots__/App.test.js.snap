@@ -17,7 +17,7 @@ exports[`app should render an IdeaForm and a CardContainer 1`] = `
 </div>
 `;
 
-exports[`app should render an IdeaForm and a CardContainer 2`] = `
+exports[`app should render the whole application 1`] = `
 <App>
   <div
     className="app"
