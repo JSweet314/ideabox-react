@@ -13,6 +13,7 @@ class IdeaForm extends Component {
       titleChars: 120,
       bodyChars: 120
     };
+    this.handleNewIdea = props.handleNewIdea;
   }
 
   updateTitleInput(e) {
@@ -39,7 +40,7 @@ class IdeaForm extends Component {
     event.preventDefault();
     const idea = new Idea(this.state.titleInput, this.state.bodyInput);
 
-    this.props.handleNewIdea(idea);
+    this.handleNewIdea(idea);
     this.setState({
       titleInput: '',
       bodyInput: '',
