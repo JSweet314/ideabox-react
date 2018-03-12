@@ -54,21 +54,21 @@ describe('app', () => {
   it('should be able to add a new idea to its array of ideas', () => {
     expect(app.state('ideas')).toEqual([]);
     
-    app.instance().handleNewIdea(idea1);
+    app.instance().handleNewIdea('Hello', 'World!');
 
-    expect(app.state('ideas')).toEqual([idea1]);
+    expect(app.state('ideas').length).toEqual(1);
   });
 
   it('should allow for multiple ideas', () => {
     expect(app.state('ideas')).toEqual([]);
 
-    app.instance().handleNewIdea(idea1);
+    app.instance().handleNewIdea(idea1.title, idea1.body);
 
-    expect(app.state('ideas')).toEqual([idea1]);
+    expect(app.state('ideas').length).toEqual(1);
 
-    app.instance().handleNewIdea(idea2);
+    app.instance().handleNewIdea(idea2.title, idea2.body);
 
-    expect(app.state('ideas')).toEqual([idea2, idea1]);
+    expect(app.state('ideas').length).toEqual(2);
   });
 
   it('should store ideas in localStorage for latter', () => {
@@ -76,19 +76,18 @@ describe('app', () => {
 
     app.instance().handleNewIdea(idea1);
 
-    expect(app.state('ideas')).toEqual([idea1]);
     expect(JSON.parse(localStorage.getItem('ideabox')).length).toEqual(1);
 
-    app.instance().handleNewIdea(idea2);
+    app.instance().handleNewIdea(idea2.title, idea2.body);
 
-    expect(app.state('ideas')).toEqual([idea2, idea1]);
+    expect(app.state('ideas').length).toEqual(2);
     expect(JSON.parse(localStorage.getItem('ideabox')).length).toEqual(2);
   });
 
   it('should be able to remove an idea from its array', () => {
     app.instance().handleNewIdea(idea1);
 
-    expect(app.state('ideas')).toEqual([idea1]);
+    expect(app.state('ideas').length).toEqual(1);
     
     app.instance().removeIdea(1234);
 

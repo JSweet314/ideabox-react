@@ -30,7 +30,7 @@ class IdeaForm extends Component {
   createIdea = (event) => {
     event.preventDefault();
     const idea = {
-      title: this.state.title, 
+      title: this.state.title,
       body: this.state.body,
       id: Date.now(),
       quality: 'swill'

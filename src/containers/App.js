@@ -12,11 +12,6 @@ class App extends Component {
       searchValue: '',
       qualityFilter: ''
     };
-    this.handleNewIdea = this.handleNewIdea.bind(this);
-    this.updateIdeaQuality = this.updateIdeaQuality.bind(this);
-    this.removeIdea = this.removeIdea.bind(this);
-    this.searchIdeas = this.searchIdeas.bind(this);
-    this.filterByQuality = this.filterByQuality.bind(this);
   }
 
   componentDidMount() {
@@ -27,27 +22,27 @@ class App extends Component {
       ideas = JSON.parse(previousBox);
     }
     
-    this.setState({ideas, visibleIdeas: ideas});
+    this.setState({ideas});
   }
 
-  handleNewIdea(idea) {
+  handleNewIdea = (idea) => {
     const ideas = [idea, ...this.state.ideas];
 
     localStorage.setItem('ideabox', JSON.stringify(ideas));
-    this.setState({ideas, visibleIdeas: ideas});
+    this.setState({ideas});
   }
 
-  removeIdea(id) {
-    const filteredIdeas = this.state.ideas.filter(idea => {
+  removeIdea = (id) => {
+    const ideas = this.state.ideas.filter(idea => {
       return idea.id !== id;
     });
 
-    localStorage.setItem('ideabox', JSON.stringify(filteredIdeas));
+    localStorage.setItem('ideabox', JSON.stringify(ideas));
 
-    this.setState({ideas: filteredIdeas, visibleIdeas: filteredIdeas});
+    this.setState({ideas});
   }
 
-  updateIdeaQuality(event, id) {
+  updateIdeaQuality = (event, id) => {
     const {idea, index} = this.state.ideas.reduce((data, idea, index) => {
       if (idea.id === id) {
         data = {idea, index};
@@ -75,11 +70,11 @@ class App extends Component {
     this.setState({ideas});
   }
 
-  searchIdeas(searchValue) {    
+  searchIdeas = (searchValue) => {
     this.setState({searchValue});
   }
 
-  filterByQuality(qualityFilter) {
+  filterByQuality = (qualityFilter) => {
     if (qualityFilter === 'all') {
       qualityFilter = '';
     }

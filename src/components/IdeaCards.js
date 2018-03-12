@@ -10,20 +10,17 @@ const IdeaCards = (
     return (idea.title.includes(searchValue)
       || idea.body.includes(searchValue))
       && idea.quality.includes(qualityFilter);
-  });
+  }).map(idea => <IdeaCard
+    key={idea.id}
+    {...idea}
+    removeIdea={removeIdea}
+    updateIdeaQuality={updateIdeaQuality}
+  />
+  );
 
   return (
     <div className="card-container">      
-      {
-        visibleIdeas.map(idea => 
-          <IdeaCard 
-            key={idea.id} 
-            {...idea}
-            removeIdea={removeIdea}
-            updateIdeaQuality={updateIdeaQuality}
-          />
-        )
-      }
+      {visibleIdeas}
     </div>
   );
 };
