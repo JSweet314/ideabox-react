@@ -3,49 +3,11 @@
 exports[`IdeaCards should render just the Quality Filter and search input if there are no cards to display 1`] = `
 <div
   className="card-container"
->
-  <input
-    className="search"
-    onChange={[Function]}
-    placeholder="SEARCH"
-    type="search"
-  />
-  <QualityFilter
-    filterByQuality={[Function]}
-  />
-</div>
+/>
 `;
 
 exports[`IdeaCards should render our good friend, IdeaCards 1`] = `
 <div
   className="card-container"
->
-  <input
-    className="search"
-    onChange={[Function]}
-    placeholder="SEARCH"
-    type="search"
-  />
-  <QualityFilter
-    filterByQuality={[Function]}
-  />
-  <IdeaCard
-    body="World!"
-    id={1234}
-    key="0"
-    quality="plausible"
-    removeIdea={[Function]}
-    title="Hello"
-    updateIdeaQuality={[Function]}
-  />
-  <IdeaCard
-    body="Woo Hoo"
-    id={4321}
-    key="1"
-    quality="genius"
-    removeIdea={[Function]}
-    title="New App!"
-    updateIdeaQuality={[Function]}
-  />
-</div>
+/>
 `;

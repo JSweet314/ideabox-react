@@ -5,18 +5,3 @@
   justify-content: center;
   align-items: center;
 }
-
-.search {
-  font-family: 'Open Sans', sans-serif;
-  margin: 2rem 0 0 0;
-  height: 4rem;
-  padding: 0 0 0 1rem;
-  width: 50%;
-  border-style: unset;
-  border: 2px solid lightgray;
-  font-size: 2rem;
-}
-
-.search::placeholder {
-  font-family: 'Open Sans', sans-serif;
-}

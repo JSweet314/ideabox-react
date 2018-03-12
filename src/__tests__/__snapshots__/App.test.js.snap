@@ -7,12 +7,16 @@ exports[`app should render an IdeaForm and a CardContainer 1`] = `
   <IdeaForm
     handleNewIdea={[Function]}
   />
-  <IdeaCards
+  <QualityFilter
     filterByQuality={[Function]}
-    removeIdea={[Function]}
     searchIdeas={[Function]}
+  />
+  <IdeaCards
+    ideas={Array []}
+    qualityFilter=""
+    removeIdea={[Function]}
+    searchValue=""
     updateIdeaQuality={[Function]}
-    visibleIdeas={Array []}
   />
 </div>
 `;
@@ -25,7 +29,9 @@ exports[`app should render the whole application 1`] = `
     <IdeaForm
       handleNewIdea={[Function]}
     >
-      <form>
+      <form
+        onSubmit={[Function]}
+      >
         <h1>
           <span>
             idea
@@ -36,6 +42,7 @@ exports[`app should render the whole application 1`] = `
           aria-label="idea title input"
           className="titleInput"
           maxLength="120"
+          name="title"
           onChange={[Function]}
           placeholder="Idea Title"
           type="text"
@@ -49,6 +56,7 @@ exports[`app should render the whole application 1`] = `
           aria-label="idea body input"
           className="bodyInput"
           maxLength="120"
+          name="body"
           onChange={[Function]}
           placeholder="Idea Body"
           type="text"
@@ -60,22 +68,18 @@ exports[`app should render the whole application 1`] = `
         </p>
         <button
           disabled={true}
-          onClick={[Function]}
-          title="Save Idea"
+          type="submit"
         >
           save
         </button>
       </form>
     </IdeaForm>
-    <IdeaCards
+    <QualityFilter
       filterByQuality={[Function]}
-      removeIdea={[Function]}
       searchIdeas={[Function]}
-      updateIdeaQuality={[Function]}
-      visibleIdeas={Array []}
     >
       <div
-        className="card-container"
+        className="quality-filter"
       >
         <input
           className="search"
@@ -83,45 +87,51 @@ exports[`app should render the whole application 1`] = `
           placeholder="SEARCH"
           type="search"
         />
-        <QualityFilter
-          filterByQuality={[Function]}
+        <label
+          htmlFor=""
         >
-          <label
-            className="quality-filter"
-            htmlFor=""
+          <span>
+            Filter by Idea Quality: 
+          </span>
+          <select
+            className="quality-filter__select"
+            name="quality"
+            onChange={[Function]}
           >
-            <span>
-              Filter Ideas By Quality: 
-            </span>
-            <select
-              className="quality-filter__select"
-              name="quality"
-              onChange={[Function]}
+            <option
+              value="all"
             >
-              <option
-                value="all"
-              >
-                all
-              </option>
-              <option
-                value="swill"
-              >
-                swill
-              </option>
-              <option
-                value="plausible"
-              >
-                plausible
-              </option>
-              <option
-                value="genius"
-              >
-                genius
-              </option>
-            </select>
-          </label>
-        </QualityFilter>
+              all
+            </option>
+            <option
+              value="swill"
+            >
+              swill
+            </option>
+            <option
+              value="plausible"
+            >
+              plausible
+            </option>
+            <option
+              value="genius"
+            >
+              genius
+            </option>
+          </select>
+        </label>
       </div>
+    </QualityFilter>
+    <IdeaCards
+      ideas={Array []}
+      qualityFilter=""
+      removeIdea={[Function]}
+      searchValue=""
+      updateIdeaQuality={[Function]}
+    >
+      <div
+        className="card-container"
+      />
     </IdeaCards>
   </div>
 </App>

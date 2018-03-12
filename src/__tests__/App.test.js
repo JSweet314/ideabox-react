@@ -111,34 +111,9 @@ describe('app', () => {
   });
 
   it('should be able to search through and display specific ideas', () => {
-    app.instance().handleNewIdea(idea1);
-    app.instance().handleNewIdea(idea2);
-
-    expect(app.state('visibleIdeas')).toEqual([idea2, idea1]);
-
-    app.instance().searchIdeas('New App!');
-
-    expect(app.state('visibleIdeas')).toEqual([idea2]);
-
-    app.instance().searchIdeas('World!');
-
-    expect(app.state('visibleIdeas')).toEqual([idea1]);
-
-    app.instance().searchIdeas('');
-
-    expect(app.state('visibleIdeas')).toEqual([idea2, idea1]); 
   });
 
   it('should be able to display ideas by quality', () => {
-    app.instance().handleNewIdea(idea1);
-    app.instance().handleNewIdea(idea2);
-    app.instance().filterByQuality('genius');
-
-    expect(app.state('visibleIdeas')).toEqual([idea2]);
-
-    app.instance().filterByQuality('plausible');
-
-    expect(app.state('visibleIdeas')).toEqual([idea1]);
   });
 
   it('should retrieve ideas from localStorage if available', () => {

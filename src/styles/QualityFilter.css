@@ -2,8 +2,23 @@
   font-size: 2rem;
   vertical-align: center;
   display: flex;
+  flex-direction: column;
   width: 50%;
   margin: 0.5rem 0 0 0;
+}
+
+.search {
+  font-family: 'Open Sans', sans-serif;
+  margin: 2rem 0 0 0;
+  height: 4rem;
+  padding: 0 0 0 1rem;
+  border-style: unset;
+  border: 2px solid lightgray;
+  font-size: 2rem;
+}
+
+.search::placeholder {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .quality-filter__select {

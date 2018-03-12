@@ -31,7 +31,6 @@ exports[`IdeaCard should render a card 1`] = `
     </p>
     <p>
       <button
-        aria-label="upvote button"
         className="upVoteBtn"
         onClick={[Function]}
         title="Upvote Idea"

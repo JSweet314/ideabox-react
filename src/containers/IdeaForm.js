@@ -1,58 +1,54 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Idea from '../scripts/Idea.js';
 import '../styles/IdeaForm.css';
 
 class IdeaForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      titleInput: '',
-      bodyInput: '',
-      saveDisabled: true,
+      title: '',
+      body: '',
+      isDisabled: true,
       titleChars: 120,
       bodyChars: 120
     };
     this.handleNewIdea = props.handleNewIdea;
   }
 
-  updateTitleInput(e) {
-    const waitingForUserInput = e.target.value && this.state.bodyInput;
+  updateInput = (e) => {
+    const {name, value} = e.target;
+    const waitingForUserInput = value && 
+    this.state[name === 'title' ? 'body' : 'title'];
 
     this.setState({
-      titleInput: e.target.value,
-      saveDisabled: !waitingForUserInput,
-      titleChars: 120 - e.target.value.length
+      [name]: value,
+      isDisabled: !waitingForUserInput,
+      [`${name}Chars`]: 120 - value.length
     });
   }
 
-  updateBodyInput(e) {
-    const waitingForUserInput = e.target.value && this.state.titleInput;
-
-    this.setState({
-      bodyInput: e.target.value,
-      saveDisabled: !waitingForUserInput,
-      bodyChars: 120 - e.target.value.length
-    });
-  }
-
-  createIdea(event) {
+  createIdea = (event) => {
     event.preventDefault();
-    const idea = new Idea(this.state.titleInput, this.state.bodyInput);
+    const idea = {
+      title: this.state.title, 
+      body: this.state.body,
+      id: Date.now(),
+      quality: 'swill'
+    };
 
     this.handleNewIdea(idea);
     this.setState({
-      titleInput: '',
-      bodyInput: '',
+      title: '',
+      body: '',
       titleChars: 120,
       bodyChars: 120,
-      saveDisabled: true
+      isDisabled: true
     });
   }
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.createIdea}>
         <h1><span>idea</span>box</h1>
         <input 
           aria-label="idea title input"
@@ -60,8 +56,9 @@ class IdeaForm extends Component {
           type="text"
           placeholder="Idea Title"
           maxLength="120"
-          value={this.state.titleInput}
-          onChange={(e) => this.updateTitleInput(e)}
+          name="title"
+          value={this.state.title}
+          onChange={this.updateInput}
         />
         <p>Characters remaining: {this.state.titleChars}</p>
         <input 
@@ -70,14 +67,14 @@ class IdeaForm extends Component {
           type="text"
           placeholder="Idea Body"
           maxLength="120"
-          value={this.state.bodyInput}
-          onChange={(e) => this.updateBodyInput(e)}
+          name="body"
+          value={this.state.body}
+          onChange={this.updateInput}
         />
         <p>Characters remaining: {this.state.bodyChars}</p>
         <button 
-          title="Save Idea"
-          onClick={(e) => this.createIdea(e)}
-          disabled={this.state.saveDisabled}>
+          type="submit"
+          disabled={this.state.isDisabled}>
           save
         </button>
       </form>

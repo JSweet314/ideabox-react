@@ -1,28 +1,26 @@
 import React from 'react';
 import IdeaCard from './IdeaCard.js';
-import QualityFilter from './QualityFilter.js';
 import PropTypes from 'prop-types';
 import '../styles/IdeaCards.css';
 
 const IdeaCards = (
-  { visibleIdeas, updateIdeaQuality, removeIdea, searchIdeas, filterByQuality }
+  { ideas, updateIdeaQuality, removeIdea, searchValue, qualityFilter}
 ) => {
+  const visibleIdeas = ideas.filter(idea => {
+    return (idea.title.includes(searchValue)
+      || idea.body.includes(searchValue))
+      && idea.quality.includes(qualityFilter);
+  });
+
   return (
-    <div className="card-container">
-      <input
-        className="search"
-        type="search"
-        placeholder="SEARCH"
-        onChange={(e) => searchIdeas(e.target.value)}
-      />
-      <QualityFilter filterByQuality={filterByQuality} />
+    <div className="card-container">      
       {
-        visibleIdeas.map((idea, index) =>
+        visibleIdeas.map(idea => 
           <IdeaCard 
+            key={idea.id} 
             {...idea}
-            key={index}
-            updateIdeaQuality={updateIdeaQuality}
             removeIdea={removeIdea}
+            updateIdeaQuality={updateIdeaQuality}
           />
         )
       }
@@ -31,15 +29,15 @@ const IdeaCards = (
 };
 
 IdeaCards.defaultProps = {
-  visibleIdeas: []
+  ideas: []
 };
 
 IdeaCards.propTypes = {
-  visibleIdeas: PropTypes.arrayOf(PropTypes.object),
+  ideas: PropTypes.arrayOf(PropTypes.object),
+  searchValue: PropTypes.string.isRequired,
+  qualityFilter: PropTypes.string.isRequired,
   removeIdea: PropTypes.func.isRequired,
-  updateIdeaQuality: PropTypes.func.isRequired,
-  searchIdeas: PropTypes.func.isRequired,
-  filterByQuality: PropTypes.func.isRequired
+  updateIdeaQuality: PropTypes.func.isRequired
 };
 
 export default IdeaCards;

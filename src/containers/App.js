@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IdeaForm from './IdeaForm.js';
 import IdeaCards from '../components/IdeaCards.js';
+import QualityFilter from '../components/QualityFilter';
 import '../styles/App.css';
 
 class App extends Component {
@@ -8,7 +9,8 @@ class App extends Component {
     super();
     this.state = {
       ideas: [],
-      visibleIdeas: []
+      searchValue: '',
+      qualityFilter: ''
     };
     this.handleNewIdea = this.handleNewIdea.bind(this);
     this.updateIdeaQuality = this.updateIdeaQuality.bind(this);
@@ -73,40 +75,32 @@ class App extends Component {
     this.setState({ideas});
   }
 
-  searchIdeas(searchValue) {
-    let visibleIdeas = this.state.ideas.filter(idea => {
-      return (
-        idea.title.includes(searchValue) || idea.body.includes(searchValue)
-      );
-    });
-    
-    this.setState({visibleIdeas});
+  searchIdeas(searchValue) {    
+    this.setState({searchValue});
   }
 
   filterByQuality(qualityFilter) {
-    let visibleIdeas;
-
     if (qualityFilter === 'all') {
-      visibleIdeas = this.state.ideas;
-    } else {
-      visibleIdeas = this.state.ideas.filter(idea => {
-        return idea.quality === qualityFilter;
-      });
+      qualityFilter = '';
     }
 
-    this.setState({visibleIdeas, qualityFilter});
+    this.setState({qualityFilter});
   }
 
   render() {
     return (
       <div className="app">
         <IdeaForm handleNewIdea={this.handleNewIdea} />
+        <QualityFilter 
+          filterByQuality={this.filterByQuality}
+          searchIdeas={this.searchIdeas}
+        />
         <IdeaCards 
-          visibleIdeas={this.state.visibleIdeas}
+          ideas={this.state.ideas}
+          searchValue={this.state.searchValue}
+          qualityFilter={this.state.qualityFilter}
           updateIdeaQuality={this.updateIdeaQuality}
           removeIdea={this.removeIdea}
-          searchIdeas={this.searchIdeas}
-          filterByQuality={this.filterByQuality}
         />
       </div>
     );

@@ -21,8 +21,7 @@ const IdeaCard = (
         <button
           title="Upvote Idea"
           className="upVoteBtn"
-          onClick={e => updateIdeaQuality(e, id)}
-          aria-label="upvote button">
+          onClick={e => updateIdeaQuality(e, id)}>
           <span aria-label="upvote button" role="img" className="upVoteBtn">
             👍
           </span>
